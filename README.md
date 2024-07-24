@@ -15,7 +15,7 @@ Members
 Using Jupyter Notebook and Python 3.7
 
 ## Problem Statement
-Prediction of the types of breast cancer based on the provided genes in the dataset.
+Predicting the types of breast cancer based on the provided genes in the dataset.
 
 ## Dataset used
 [Breast cancer gene expression - CuMiDa](https://www.kaggle.com/datasets/brunogrisci/breast-cancer-gene-expression-cumida)                                           
@@ -49,27 +49,38 @@ In beginning our data cleaning, we first removed all rows with the values 'cell_
 We then checked for any duplicate and missing values throughout the entire dataset, to which we did not find any at all, requiring no cleaning on that front.
 
 #### Cleaning of gene dataset
-However, the number of genes in the dataset was too many for such an exploration, with over 54,600. As such, we decided that we will be using PCA as a method to select the genes that are most likely to help us in our exploration in prediction of the various types of breast cancer. These genes from the selection will serve as our predictors for the response variable of types of breast cancer in our exploration. 
+However, the number of genes in the dataset was too many for such an exploration, with over 54,600. As such, we decided that we will be using PCA as a method to select the genes that are most likely to help us in our exploration in predicting the various types of breast cancer. These genes from the selection will serve as our predictors for the response variable of types of breast cancer in our exploration. 
 
 #### Elaborate on PCA and how we removed some other genes from the PCA gene dataset.
 
-PCA is a statistical technique to emphasize variation and bring out strong patterns in a dataset. Due to the use high dimensional data, we utilised PCA to convert our possible correlated variables into a set of values of linearly uncorrelated values called principal components. Principal components are ordered by the amount of variance they capture from the dataset. PCA loadings represent how much each gene contribute to each principal component. By taking the gene with the maximum loading in each of the top 15 principal components, we effectively extracted the genes that will contribute most to the dataset's variability. We will be using these genes in our predictive models.
+PCA is a statistical technique to emphasize variation and identify strong patterns in a dataset. Due to the use of high dimensional data, we utilised PCA to convert our possible correlated variables into a set of values of linearly uncorrelated values called principal components. Principal components are ordered by the amount of variance they capture from the dataset. PCA loadings represent how much each gene contributes to each principal component. By taking the gene with the maximum loading in each of the top 15 principal components, we effectively extracted the genes that will contribute most to the dataset's variability. We will be using these genes in our predictive models.
 
 #### Further cleaning of the PCA gene predictors
-After we obtained our 15 genes for use in our exploration through the PCA, we imported the 'mygene' library, to compare our 15 gene predictors. This was so as to find out if they were actual genes that exist and can be mapped to gene symbols. We also further researched on if the genes that we found among the 15 PCA gene predictors were potentially related to cancer in any way.
+After we obtained our 15 genes for use in our exploration through the PCA, we imported the 'mygene' library, to compare our 15 gene predictors. This was to find out if they were actual genes that exist and can be mapped to gene symbols. We also further researched if the genes that we found among the 15 PCA gene predictors were potentially related to cancer in any way.
 
 From this above step, we found that 3 out of the 15 genes could not be found within the 'mygene' library, and we decided to remove these 3 genes as predictors from our set of PCA gene predictors, leaving us with just 12 gene predictors remaining. For those we could identify, we were able to find a reported correlation between the respective genes and cancer.
 
-We believe that due to lack of potential understanding of the 3 genes due to their unknown natures, it might inaccurately affect our exploration due to its potential lack of correlation with breast cancer at all.
+We believe that due to lack of potential understanding of the 3 genes due to their unknown natures, they may inaccurately affect our exploration due to their potential lack of correlation with breast cancer at all.
 
 However, to ensure that the genes picked out by PCA are good predictors of the types of breast cancer, we will conduct an evaluation of these PCA genes against an equal number of randomly selected genes from the dataset.
 
 ## Exploratory Data Analysis
-To get a better understanding of our data, we plotted the box plots of the 12 genes we have selected from the PCA method, to understand the gene spread across the various subjects, and volume of outliers. Although there are outliers, we will not remove them as these outliers might contain important biological information which are important in helping us predicting the cancer type.
+To get a better understanding of our data, we plotted the box plots of the 12 genes we have selected from the PCA method, to understand the gene spread across the various subjects, and number of outliers. Although there are outliers, we will not remove them as these outliers might contain important biological information which are important in helping us predict the cancer type.
+
+Box Plots:
+![image](https://github.com/user-attachments/assets/8acb9438-0d3e-4883-9fe3-3ef33c9c32cc)
 
 We plotted a correlation matrix to find the correlations between gene pairs and any potential relationship between them, to which some strong positive and negative correlations between gene pairs surfaced.
 
+![image](https://github.com/user-attachments/assets/b32faea6-9628-435c-8e69-c4d6c545a8b8)
+
 We also plotted pair plots and violin plots to obtain a more comprehensive stance on the clustering of genes as well as the varied densities across different genes.
+
+Pair Plots:
+![image](https://github.com/user-attachments/assets/4f982e35-a7df-4025-9231-a735c41c3b0d)
+
+Violin Plots:
+![image](https://github.com/user-attachments/assets/b9b4a9c5-eeda-49ee-9610-c40ffb003b36)
 
 From our EDA, we concluded that the minimal amount of outliers and the correlations between the chosen gene predictors meant that these gene predictors selected were suitable to use in our model.
 
