@@ -1,9 +1,7 @@
 
 # Predicting the types of breast cancer in patients
 
-<div style="text-align: center;">
-    <img src="[attachment:0fece9de-904f-42dd-95ba-3ba1269f5972.png](https://www.bronsonhealth.com/app/files/public/10525/breast-cancer-ribbon.png)" width="500"/> <!-- Adjust width as needed -->
-</div>
+![image](https://github.com/user-attachments/assets/a94ee5df-20a6-441e-b8cd-648e133b3cb4)
 
 #### SC1015 Mini Project
 NTU School of Computer Science and Engineering
