@@ -2,13 +2,12 @@
 # Predicting the types of breast cancer in patients
 
 <div style="text-align: center;">
-    <img src="attachment:0fece9de-904f-42dd-95ba-3ba1269f5972.png" width="500"/> <!-- Adjust width as needed -->
+    <img src="[attachment:0fece9de-904f-42dd-95ba-3ba1269f5972.png](https://www.bronsonhealth.com/app/files/public/10525/breast-cancer-ribbon.png)" width="500"/> <!-- Adjust width as needed -->
 </div>
 
-#### For SC1015 Mini Project
+#### SC1015 Mini Project
 NTU School of Computer Science and Engineering
-- Lab group - **ACDA1**
-- Group 6
+- Lab Group - **ACDA1, Group 6**
 
 Members
 - [Joshua Foo Tse Ern](https://github.com/josshhz11)
