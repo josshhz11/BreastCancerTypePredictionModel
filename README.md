@@ -18,7 +18,7 @@ Using Jupyter Notebook and Python 3.7
 Predicting the types of breast cancer based on the provided genes in the dataset.
 
 ## Dataset used
-[Breast cancer gene expression - CuMiDa](https://www.kaggle.com/datasets/brunogrisci/breast-cancer-gene-expression-cumida)                                           
+[Breast cancer gene expression - CuMiDa](https://www.kaggle.com/datasets/brunogrisci/breast-cancer-gene-expression-cumida)
 
 ### Topic covered in this notebook
 1. Data Preparation and Cleaning
