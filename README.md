@@ -1,5 +1,5 @@
 
-# Predicting the types of breast cancer in patients
+# Breast Cancer Type Prediction Model
 
 ![image](https://github.com/user-attachments/assets/a94ee5df-20a6-441e-b8cd-648e133b3cb4)
 
@@ -43,29 +43,29 @@ Thus, our group seeks to explore the genes that determine and affect the type of
 Our original dataset from Kaggle contained a total of 151 rows and 54,677 columns, where we have 151 patients and their respective types of breast cancer (or lack thereof), accompanied by the genes they had.
 
 #### Removing of certain breast cancer types 
-In beginning our data cleaning, we first removed all rows with the values 'cell_line' and 'normal' under the column 'types'. This is because 'cell_line' refers to breast cancer that was developed in lab experiments for testing, and 'normal' refers to tests where breast cancer was not present. As such, we removed 'cell_line' as breast cancer that was from lab experiments are not an accurate representation of the breast cancer types we are trying to model, and we removed 'normal' since tests without breast cancer will not aid our exploration into the types of breast cancer caused by different types of genetics.
+In beginning our data cleaning, we first removed all rows with the values 'cell_line' and 'normal' under the column 'types'. This is because 'cell_line' refers to breast cancer that was developed in lab experiments **for testing**, and 'normal' refers to tests where breast cancer was **not present**. As such, we removed 'cell_line' as breast cancer that was from lab experiments are not an accurate representation of the breast cancer types we are trying to model, and we removed 'normal' since tests without breast cancer will not aid our exploration into the types of breast cancer caused by different types of genetics.
 
 #### Checking of duplicates and missing values
 We then checked for any duplicate and missing values throughout the entire dataset, to which we did not find any at all, requiring no cleaning on that front.
 
 #### Cleaning of gene dataset
-However, the number of genes in the dataset was too many for such an exploration, with over 54,600. As such, we decided that we will be using PCA as a method to select the genes that are most likely to help us in our exploration in predicting the various types of breast cancer. These genes from the selection will serve as our predictors for the response variable of types of breast cancer in our exploration. 
+However, the number of genes in the dataset was too many for such an exploration, with over 54,600. As such, we decided that we will be using **PCA** as a method to select the genes that are most likely to help us in our exploration in predicting the various types of breast cancer. These genes from the selection will serve as our predictors for the response variable of types of breast cancer in our exploration. 
 
 #### Elaborate on PCA and how we removed some other genes from the PCA gene dataset.
 
 PCA is a statistical technique to emphasize variation and identify strong patterns in a dataset. Due to the use of high dimensional data, we utilised PCA to convert our possible correlated variables into a set of values of linearly uncorrelated values called principal components. Principal components are ordered by the amount of variance they capture from the dataset. PCA loadings represent how much each gene contributes to each principal component. By taking the gene with the maximum loading in each of the top 15 principal components, we effectively extracted the genes that will contribute most to the dataset's variability. We will be using these genes in our predictive models.
 
 #### Further cleaning of the PCA gene predictors
-After we obtained our 15 genes for use in our exploration through the PCA, we imported the 'mygene' library, to compare our 15 gene predictors. This was to find out if they were actual genes that exist and can be mapped to gene symbols. We also further researched if the genes that we found among the 15 PCA gene predictors were potentially related to cancer in any way.
+After we obtained our 15 genes for use in our exploration through the PCA, we imported the *mygene* library to compare our 15 gene predictors. This was to find out if they were actual genes that exist and genes that can be mapped to gene symbols. We also further researched if the genes that we found among the 15 PCA gene predictors were potentially related to cancer in any way.
 
-From this above step, we found that 3 out of the 15 genes could not be found within the 'mygene' library, and we decided to remove these 3 genes as predictors from our set of PCA gene predictors, leaving us with just 12 gene predictors remaining. For those we could identify, we were able to find a reported correlation between the respective genes and cancer.
+From this above step, we found that 3 out of the 15 genes could not be found within the *mygene* library, and we decided to remove these 3 genes as predictors from our set of PCA gene predictors, leaving us with just 12 gene predictors remaining. For those we could identify, we were able to find a reported correlation between the respective genes and cancer.
 
 We believe that due to lack of potential understanding of the 3 genes due to their unknown natures, they may inaccurately affect our exploration due to their potential lack of correlation with breast cancer at all.
 
 However, to ensure that the genes picked out by PCA are good predictors of the types of breast cancer, we will conduct an evaluation of these PCA genes against an equal number of randomly selected genes from the dataset.
 
 ## Exploratory Data Analysis
-To get a better understanding of our data, we plotted the box plots of the 12 genes we have selected from the PCA method, to understand the gene spread across the various subjects, and number of outliers. Although there are outliers, we will not remove them as these outliers might contain important biological information which are important in helping us predict the cancer type.
+To get a better understanding of our data, we plotted the box plots of the 12 genes we have selected from the PCA method, to understand the gene spread across the various subjects, and number of outliers. Although there are outliers, we will not remove them due to the thin nature of our dataset (lack of data entries) and also due to these outliers possibly containing important biological information which are important in helping us predict the cancer type.
 
 Box Plots:
 ![image](https://github.com/user-attachments/assets/8acb9438-0d3e-4883-9fe3-3ef33c9c32cc)
@@ -145,7 +145,9 @@ Based on the models above, we can deduce that **Support Vector Model (SVM) Class
 
 ## Data-Driven Insights and Recommendation
 
-In terms of data-driven insights, for all three models, the most misclassifications were made between luminal_A and luminal_B. It is very likely that more samples would be needed for more accurate classification, to distinguish between the two types. We thus suggest that in future work, more observations can be included to improve the accuracy of any model selected. Driven by our curiosity to further investigate this interesting phenomenon, we conducted a bit more research and found that luminal A and B cancer types are very similar in terms of causes, manifestations, and treatments. This is in contrast with HER and basal cancer types, which have their own defining characteristics. Overall, we found that the top genes generated by Principal Component Analysis (PCA) do indeed have a stronger predictive effect on the cancer type as compared to the rest of the genes, represented by a random sample. We also found that Support Vector Machine (SVM) is the best model for our analysis, as it has the highest accuracy and least classification errors. Combining these two insights, we can now conclude that it is possible to reliably predict the cancer type by using SVM model to analyse data of genes obtained from PCA.
+In terms of data-driven insights, for all three models, the most misclassifications were made between luminal_A and luminal_B. **More samples would be needed for more accurate classification**, to distinguish between the two types. We thus suggest that in future work, more observations can be included to improve the accuracy of any model selected. Driven by our curiosity to further investigate this interesting phenomenon, we conducted a bit more research and found that luminal A and B cancer types are very similar in terms of causes, manifestations, and treatments. This is in contrast with HER and basal cancer types, which have their own defining characteristics.
+
+Overall, we found that the top genes generated by Principal Component Analysis (PCA) do indeed have a **stronger predictive effect on the cancer type** as compared to the rest of the genes, represented by a random sample. We also found that Support Vector Machine (SVM) is the best model for our analysis, as it has the highest accuracy and least classification errors. Combining these two insights, we can now conclude that it is possible to reliably predict the cancer type by using SVM model to analyse data of genes obtained from PCA.
 
 ## Acknowledgements
  - [Scikit Learn](https://scikit-learn.org/stable/supervised_learning.html#supervised-learning)
