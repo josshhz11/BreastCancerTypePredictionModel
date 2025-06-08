@@ -9,7 +9,7 @@ NTU School of Computer Science and Engineering
 
 Members
 - [Joshua Foo Tse Ern](https://github.com/josshhz11)
-- Kieran Voo E Kai
+- [Kieran Voo E Kai](https://github.com/kieranvoo)
 - Yuan Haoer
 
 Using Jupyter Notebook and Python 3.7
@@ -24,13 +24,13 @@ Predicting the types of breast cancer based on the provided genes in the dataset
 1. Data Preparation and Cleaning
 2. Exploratory Data Analysis
 3. ML Models Analysis
-    - KNN Classification
+    - K-Nearest Neighbours Classification
     - Random Forest Classification
     - Support Vector Model (SVM) Classification
 4. Model Evaluation
 5. Data Driven Insights and Recommendation
 
-## Introduction
+## Introduction and Problem Statement
 Breast cancer is the most common cancer worldwide and continues to rise. In Singapore alone, it has caused 270 deaths annually and has seen a 160% increase in incidence over the past four decades, underscoring the importance of this subject topic for society.
 
 Breast cancer involves multiple genetic mutations in proto-oncogenes and tumor suppressor genes, which disrupt normal cell cycle control, causing uncontrollable cell division and forming a tumor.
